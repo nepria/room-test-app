@@ -1,11 +1,11 @@
-package com.example.room_test_app.fragments
+package com.example.room_test_app.fragments.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.room_test_app.R
-import com.example.room_test_app.data.User
+import com.example.room_test_app.model.User
 import kotlinx.android.synthetic.main.custom_row.view.*
 import java.util.Collections.emptyList
 

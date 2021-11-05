@@ -10,7 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.room_test_app.R
-import com.example.room_test_app.data.ViewModel
+import com.example.room_test_app.fragments.list.ListAdapter
+import com.example.room_test_app.viewmodel.ViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class listFragment : Fragment() {
