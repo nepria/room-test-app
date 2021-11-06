@@ -50,7 +50,7 @@ class listFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.match_parent) {
+        if(item.itemId == R.id.menu_delete) {
             deleteAllUsers()
         }
         return super.onOptionsItemSelected(item)

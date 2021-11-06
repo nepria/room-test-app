@@ -1,15 +1,15 @@
 package com.example.room_test_app.fragments.update
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.afollestad.materialdialogs.MaterialDialog
 import com.example.room_test_app.R
 import com.example.room_test_app.model.User
 import com.example.room_test_app.viewmodel.ViewModel
@@ -67,24 +67,37 @@ class UpdateFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.match_parent) {
+        if(item.itemId == R.id.menu_delete) {
             deleteUser()
         }
         return super.onOptionsItemSelected(item)
     }
 
     private fun deleteUser() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Yes") {_, _ ->
-           mUserViewModel.deleteUser(args.currentUser)
+        MaterialDialog(requireContext()).show {
+            title(text = "Do you want to delete the user")
+            message(text = "This operation cannot be reversed")
+            positiveButton(text = "Yes") {
+                mUserViewModel.deleteUser(args.currentUser)
             Toast.makeText(requireContext(), "Successfully removed: ${args.currentUser.firstName}",
             Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+            }
+            negativeButton(text = "No") {
+                it.dismiss()
+            }
         }
-        builder.setNegativeButton("No"){_, _ -> }
-        builder.setTitle("Delete ${args.currentUser.firstName}?")
-        builder.setMessage("Are you sure you want to delete ${args.currentUser.firstName}?")
-        builder.create().show()
+//        val builder = AlertDialog.Builder(requireContext())
+//        builder.setPositiveButton("Yes") {_, _ ->
+//           mUserViewModel.deleteUser(args.currentUser)
+//            Toast.makeText(requireContext(), "Successfully removed: ${args.currentUser.firstName}",
+//            Toast.LENGTH_SHORT).show()
+//            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+//        }
+//        builder.setNegativeButton("No"){_, _ -> }
+//        builder.setTitle("Delete ${args.currentUser.firstName}?")
+//        builder.setMessage("Are you sure you want to delete ${args.currentUser.firstName}?")
+//        builder.create().show()
     }
 
 }
