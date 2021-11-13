@@ -33,9 +33,9 @@ class UpdateFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(ViewModel::class.java)
 
-        view.updatefirstname.setText(args.currentUser.firstName)
-        view.updatelastname.setText(args.currentUser.lastName)
-        view.updateage.setText(args.currentUser.age.toString())
+        view.updatefirstname.setText(args.currentUser.quote)
+        view.updatelastname.setText(args.currentUser.author)
+
 
         view.updatebtn.setOnClickListener {
             updateItem()
@@ -45,12 +45,12 @@ class UpdateFragment : Fragment() {
         return view
     }
     private fun updateItem() {
-        val firstName = updatefirstname.text.toString()
-        val lastName = updatelastname.text.toString()
-        val  Age = Integer.parseInt(updateage.text.toString())
+        val quote = updatefirstname.text.toString()
+        val author = updatelastname.text.toString()
 
-        if(inputCheck(firstName, lastName, updateage.text)) {
-            val updatedUser = User(args.currentUser.id, firstName,lastName,Age)
+
+        if(inputCheck(quote, author, )) {
+            val updatedUser = User(args.currentUser.id, quote, author)
             mUserViewModel.updateUser(updatedUser)
             Toast.makeText(requireContext(), "Updated Successfully!", Toast.LENGTH_LONG)
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
@@ -58,8 +58,8 @@ class UpdateFragment : Fragment() {
             Toast.makeText(requireContext(), "Please fill all details", Toast.LENGTH_LONG)
         }
     }
-    private fun inputCheck(firstname: String, lastname: String, age: Editable): Boolean {
-        return !(TextUtils.isEmpty(firstname) && TextUtils.isEmpty(lastname) && age.isEmpty())
+    private fun inputCheck(firstname: String, lastname: String): Boolean {
+        return !(TextUtils.isEmpty(firstname) && TextUtils.isEmpty(lastname))
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -79,7 +79,7 @@ class UpdateFragment : Fragment() {
             message(text = "This operation cannot be reversed")
             positiveButton(text = "Yes") {
                 mUserViewModel.deleteUser(args.currentUser)
-            Toast.makeText(requireContext(), "Successfully removed: ${args.currentUser.firstName}",
+            Toast.makeText(requireContext(), "Successfully removed: ${args.currentUser.author}",
             Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
             }
