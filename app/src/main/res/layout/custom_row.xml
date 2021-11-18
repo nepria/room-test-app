@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="24sp"
+    android:paddingTop="34dp"
+    android:paddingBottom="22dp"
+    android:paddingLeft="35dp"
     android:background="@color/black"
     android:id="@+id/row_layout">
 
@@ -47,11 +49,11 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="358dp"
-        android:layout_height="126dp"
+        android:layout_height="131dp"
 
         android:elevation="11dp"
         app:cardBackgroundColor="#222222"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
@@ -62,7 +64,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="17dp"
-            android:layout_height="13dp"
+            android:layout_height="14dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
             app:srcCompat="@drawable/invertedcomma" />
@@ -78,6 +80,7 @@
 
         <TextView
             android:id="@+id/author"
+            android:textColor="#ffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="280dp"

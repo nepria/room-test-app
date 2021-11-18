@@ -62,7 +62,7 @@ class listFragment : Fragment() {
             mUserViewModel.deleteAllUsers()
             Toast.makeText(requireContext(), "Successfully removed everything",
                 Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+//            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
         builder.setNegativeButton("No"){_, _ -> }
         builder.setTitle("Delete everything")

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.room_test_app.fragments.listFragment"
-        android:label="List"
+        android:label=""
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
@@ -16,11 +16,14 @@
         <action
             android:id="@+id/action_listFragment_to_updateFragment"
             app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_priview"
+            app:destination="@id/priview" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.room_test_app.fragments.addFragment"
-        android:label="Add"
+        android:label=""
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
@@ -29,7 +32,7 @@
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.example.room_test_app.fragments.update.UpdateFragment"
-        android:label="Update"
+        android:label=""
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_listFragment"
@@ -37,5 +40,25 @@
         <argument
             android:name="currentUser"
             app:argType="com.example.room_test_app.model.User" />
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment2"
+            app:destination="@id/listFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/priview"
+        android:name="com.example.room_test_app.fragments.priview"
+        android:label=""
+        tools:layout="@layout/fragment_priview" >
+        <action
+            android:id="@+id/action_priview_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.room_test_app.model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/copyFragment"
+        android:name="com.example.room_test_app.fragments.CopyFragment"
+        android:label="fragment_copy"
+        tools:layout="@layout/fragment_copy" />
 </navigation>

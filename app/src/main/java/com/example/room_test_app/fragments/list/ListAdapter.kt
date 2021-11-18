@@ -31,7 +31,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
 
         holder.itemView.row_layout.setOnClickListener{
-            val action = listFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            val action = listFragmentDirections.actionListFragmentToPriview(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
 

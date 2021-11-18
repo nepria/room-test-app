@@ -10,51 +10,59 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="295dp"
         android:layout_height="61dp"
+        android:background="#222222"
         android:ems="10"
+        android:hint=" Quote"
         android:inputType="textPersonName"
-        android:hint="First Name"
+        android:textColorHint="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="294dp"
         android:layout_height="67dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="56dp"
+        android:background="#222222"
         android:ems="10"
+        android:hint=" Author"
         android:inputType="textPersonName"
-        android:hint="Last Name"
+        android:textColorHint="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="191dp"
         android:layout_height="53dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="48dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="264dp"
+        android:background="#222222"
         android:text="ADD"
+        android:textColorHint="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
-         />
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.989" />
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="292dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="64dp"
-        android:hint="Age"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+    <!--    <EditText-->
+<!--        android:id="@+id/editTextNumber"-->
+<!--        android:layout_width="292dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginEnd="64dp"-->
+<!--        android:hint=" Age"-->
+<!--        android:ems="10"-->
+<!--        android:background="#222222"-->
+<!--        android:textColorHint="#ffff"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
