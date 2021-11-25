@@ -1,6 +1,5 @@
 package com.example.room_test_app.fragments.list
 
-import android.app.ListFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,10 +32,12 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.row_layout.setOnClickListener{
             val action = listFragmentDirections.actionListFragmentToPriview(currentItem)
             holder.itemView.findNavController().navigate(action)
+
         }
 
 
     }
+
 
     override fun getItemCount(): Int {
         return userList.size
